@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+	<div></div>
+  <script>
+    var str1 ="Paraphrasing is often defined as putting a passage from an author into your own words. However, what are your own words? How different must your paraphrase be from the original? The answer is it should be 【正确 considerably 其他 considerable 和 considerate 和 considerately】 different. The whole point of paraphrasing is to show you have read and understood another person's ideas and can summarise them in your own writing style rather than borrowing their phrases. If you just change a few words or add some bits 【正确 of your own 其他 in own 和 of yourself 和 with your own】 to an otherwise reproduced passage, you will probably 【正确 be penalised 其他 be penalising 和 have penalised 和 penalise】 for plagiarism. You should aim to 【正确 condense 其他 amplify 和 copy 和 short】 and simplify a writer's ideas and describe them using different sentence structures and expressions. It is also important to credit the original writer by referencing.";
+
+    function getParamData(str,space) {
+      var dataArr = str.split(/[【】]/);
+      var dataObj = {
+        text: '',
+        options: []
+      };
+   
+      for(var i = 0;i<dataArr.length;i++) {
+        if(i%2==0) {
+          dataObj.text+=dataArr[i]+space;
+        } else {
+          var option = []
+          dataArr[i].split(/["正确""其他""和"]/).forEach(function(item){
+            if(item!=='') {
+				if (!Array.prototype.derangedArray) {
+				    Array.prototype.derangedArray = function() {
+				        for(var j, x, i = this.length; i; j = parseInt(Math.random() * i), x = this[--i], this[i] = this[j], this[j] = x);
+				        return this;
+				    };
+				}
+              item = item.replace(/(^\s*)|(\s*)$/g,"");
+              option.push(item)
+            }
+          });
+          option = option.derangedArray();
+          dataObj.options.push(option);
+        }
+      }
+      dataObj.text = dataObj.text.substring(0,dataObj.text.length-space.length)
+      return dataObj;
+    }
+    console.log(getParamData(str1,'____'));
+
+  </script>
+</body>
+</html>
